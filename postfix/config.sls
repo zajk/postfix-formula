@@ -1,3 +1,5 @@
+{% from "postfix/map.jinja" import postfix with context %}
+
 include:
   - postfix
 
@@ -11,7 +13,7 @@ include:
 
 /etc/postfix/main.cf:
   file.managed:
-    - source: salt://postfix/files/main.cf
+    - source: {{ postfix.main_source }}
     - user: root
     - group: root
     - mode: 644

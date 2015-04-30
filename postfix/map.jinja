@@ -2,13 +2,16 @@
     'Debian': {
         'packages': ['postfix', 'postfix-policyd-spf-python'],
         'service': 'postfix',
+        'main_source': 'salt://postfix/files/main.cf'
     },
     'Gentoo': {
         'packages': ['mail-mta/postfix'],
         'service': 'postfix',
+        'main_source': 'salt://postfix/files/main.cf'
     },
     'RedHat': {
         'packages': ['postfix'],
         'service': 'postfix',
+        'main_source': 'salt://postfix/files/main.cf'
     },
 }, merge=salt['pillar.get']('postfix:lookup')) %}
